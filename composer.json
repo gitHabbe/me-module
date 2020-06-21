@@ -14,8 +14,7 @@
         }
     },
     "require": {
-        "anax/anax-ramverk1-me": "^1.0.0",
-        "anax/remserver": "dev-master"
+        "anax/anax-ramverk1-me": "^1.0.0"
     },
     "require-dev": {
         "phpmetrics/phpmetrics": "^2",
