@@ -13,8 +13,6 @@
             "Hab\\": "src/"
         }
     },
-    "minimum-stability": "beta",
-    "prefer-stable": true,
     "require": {
         "anax/anax-ramverk1-me": "^1.0.0",
         "anax/remserver": "dev-master"
