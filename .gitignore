@@ -1,1 +1,6 @@
 .DS_Store
+/a
+/vendor
+/build
+composer.lock
+.bin

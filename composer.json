@@ -1,0 +1,27 @@
+{
+    "name": "githabbe/me-module",
+    "type": "library",
+    "description": "Module for course",
+    "keywords": [
+        "boilerplate",
+        "education"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Anax\\": "src/",
+            "Hab\\": "src/"
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "require": {
+        "anax/anax-ramverk1-me": "^1.0.0",
+        "anax/remserver": "dev-master"
+    },
+    "require-dev": {
+        "phpmetrics/phpmetrics": "^2",
+        "phpunit/phpunit": "^7",
+        "anax/anax-lite": "^1.0.24"
+    }
+}
