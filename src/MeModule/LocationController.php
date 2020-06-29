@@ -34,7 +34,7 @@ class LocationController implements ContainerInjectableInterface
             "coords" => $session->get("coords"),
             // "ress" => $session->get("ress"),
         ];
-        $page->add("location", $data);
+        $page->add("MeModule/location", $data);
 
         return $page->render(["title" => "Location"]);
     }

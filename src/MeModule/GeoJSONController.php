@@ -4,7 +4,7 @@ namespace Hab\MeModule;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
-use Hab\Model;
+// use Hab\Model;
 
 // use Anax\Route\Exception\ForbiddenException;
 // use Anax\Route\Exception\NotFoundException;
