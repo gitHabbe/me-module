@@ -1,9 +1,13 @@
 <?php
 
-namespace Hab\Model;
+namespace Hab\MeModule;
 
-class ValidateIP
+use Anax\Commons\ContainerInjectableInterface;
+use Anax\Commons\ContainerInjectableTrait;
+
+class ValidateIP implements ContainerInjectableInterface
 {
+    use ContainerInjectableTrait;
     private $ip;
     private $type;
 

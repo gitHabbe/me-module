@@ -10,7 +10,8 @@
     "autoload": {
         "psr-4": {
             "Anax\\": "src/",
-            "Hab\\": "src/"
+            "Hab\\": "src/",
+            "Habb\\": "src/"
         }
     },
     "require": {

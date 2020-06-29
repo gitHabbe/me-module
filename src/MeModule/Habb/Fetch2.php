@@ -1,6 +1,6 @@
 <?php
 
-namespace Hab\Model;
+namespace Hab\MeModule;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;

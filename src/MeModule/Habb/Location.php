@@ -1,6 +1,6 @@
 <?php
 
-namespace Hab\Model;
+namespace Hab\MeModule;
 
 class Location
 {

@@ -57,7 +57,7 @@ class ValidateIPJsonController implements ContainerInjectableInterface
         $request = $this->di->get("request");
         $ip = $request->getGet("ip", "");
         
-        $validator = new \Hab\Model\ValidateIP($ip);
+        $validator = new \Hab\MeModule\ValidateIP($ip);
         $data = $validator->sendRes();
         $this->res["data"] = $data;
 

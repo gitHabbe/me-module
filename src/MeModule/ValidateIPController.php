@@ -4,7 +4,7 @@ namespace Hab\MeModule;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
-// use Hab\Model;
+// use Anax\Model;
 
 // use Anax\Route\Exception\ForbiddenException;
 // use Anax\Route\Exception\NotFoundException;
@@ -62,7 +62,22 @@ class ValidateIPController implements ContainerInjectableInterface
         $title = "Validate IP";
         $page = $this->di->get("page");
         $page->add("MeModule/validate-ip", $data);
+        $namespaces=array();
+        foreach(get_declared_classes() as $name) {
+            if(preg_match_all("@[^\\\]+(?=\\\)@iU", $name, $matches)) {
+                $matches = $matches[0];
+                $parent =&$namespaces;
+                while(count($matches)) {
+                    $match = array_shift($matches);
+                    if(!isset($parent[$match]) && count($matches))
+                        $parent[$match] = array();
+                    $parent =&$parent[$match];
 
+                }
+            }
+        }
+
+        print_r($namespaces);
         return $page->render([
             "title" => $title,
         ]);
@@ -79,7 +94,8 @@ class ValidateIPController implements ContainerInjectableInterface
         $response = $this->di->get("response");
         $session = $this->di->get("session");
         $ip = $request->getPost("ip");
-        $validator = new \Hab\Model\ValidateIP($ip);
+        // $test = $this->di->get("fetch");
+        $validator = new ValidateIP($ip);
         $data = $validator->sendRes();
         $this->res["data"] = $data;
 
