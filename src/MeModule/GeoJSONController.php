@@ -48,12 +48,15 @@ class GeoJSONController implements ContainerInjectableInterface
     {
         $request = $this->di->get("request");
         $ip = $request->getPost("ip");
-        $validator = new \Hab\Model\ValidateIP($ip);
+        $validator = new \Hab\MeModule\ValidateIP($ip);
         $data = $validator->sendRes();
+        $res = [
+            "error" => "invalid format"
+        ];
         if ($data["isValid"]) {
             $api = require(ANAX_INSTALL_PATH . "/config.php");
             $key = $api["key"];
-            $fetch = new \Hab\Model\Fetch("GET", "http://api.ipstack.com/$ip?access_key=$key");
+            $fetch = new \Hab\MeModule\Fetch("GET", "http://api.ipstack.com/$ip?access_key=$key");
             $res = $fetch->fetch();
         }
         return [$res];
@@ -63,12 +66,15 @@ class GeoJSONController implements ContainerInjectableInterface
     {
         $request = $this->di->get("request");
         $ip = $request->getGet("ip");
-        $validator = new \Hab\Model\ValidateIP($ip);
+        $validator = new \Hab\MeModule\ValidateIP($ip);
         $data = $validator->sendRes();
+        $res = [
+            "error" => "invalid format"
+        ];
         if ($data["isValid"]) {
             $api = require(ANAX_INSTALL_PATH . "/config.php");
             $key = $api["key"];
-            $fetch = new \Hab\Model\Fetch("GET", "http://api.ipstack.com/$ip?access_key=$key");
+            $fetch = new \Hab\MeModule\Fetch("GET", "http://api.ipstack.com/$ip?access_key=$key");
             $res = $fetch->fetch();
         }
         return [$res];

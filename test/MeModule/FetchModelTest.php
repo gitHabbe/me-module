@@ -4,7 +4,7 @@ namespace Anax\Controller;
 
 use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
-use Hab\Model;
+use Hab\MeModule;
 
 /**
  * Test the SampleJsonController.
@@ -13,7 +13,7 @@ class FetchModelTest extends TestCase
 {
     public function testFetchMethod()
     {
-        $fetch = new \Hab\Model\Fetch("POST", "1.2.3.4");
+        $fetch = new \Hab\MeModule\Fetch("POST", "1.2.3.4");
         $fetch->setMethod("GET");
         $res = $fetch->getMethod();
         // $fetch->applyMethod();
@@ -23,7 +23,7 @@ class FetchModelTest extends TestCase
 
     public function testFetchApplyMethod()
     {
-        $fetch = new \Hab\Model\Fetch("GET", "1.2.3.4");
+        $fetch = new \Hab\MeModule\Fetch("GET", "1.2.3.4");
         $fetch->applyMethod("GET");
         $fetch->applyMethod("POST");
         $fetch->applyMethod("PUT");
@@ -36,7 +36,7 @@ class FetchModelTest extends TestCase
 
     public function testFetchApplyParamsMethod()
     {
-        $fetch = new \Hab\Model\Fetch("POST", "1.2.3.4");
+        $fetch = new \Hab\MeModule\Fetch("POST", "1.2.3.4");
         $params = [
             "ip" => "1.2.3.4",
         ];
