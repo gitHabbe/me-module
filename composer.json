@@ -2,6 +2,7 @@
     "name": "githabbe/me-module",
     "type": "library",
     "description": "Module for course",
+    "minimum-stability": "beta",
     "keywords": [
         "boilerplate",
         "education"
@@ -15,7 +16,8 @@
         }
     },
     "require": {
-        "anax/anax-ramverk1-me": "^1.0.0"
+        "anax/anax-ramverk1-me": "^1.0.0",
+        "anax/anax-cli": "^1.2"
     },
     "require-dev": {
         "phpmetrics/phpmetrics": "^2",

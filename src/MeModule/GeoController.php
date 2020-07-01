@@ -1,10 +1,10 @@
 <?php
 
-namespace Anax\Controller;
+namespace Hab\MeModule;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
-use Hab\Model;
+use Hab\MeModule;
 
 // use Anax\Route\Exception\ForbiddenException;
 // use Anax\Route\Exception\NotFoundException;
@@ -65,7 +65,7 @@ class GeoController implements ContainerInjectableInterface
             "defaultIP" => $defaultIP,
         ];
         $title = "Validate IP";
-        $page->add("geo-ip", $data);
+        $page->add("MeModule/geo-ip", $data);
 
         return $page->render(["title" => $title]);
     }
@@ -76,12 +76,12 @@ class GeoController implements ContainerInjectableInterface
         $request = $this->di->get("request");
         $session = $this->di->get("session");
         $ip = $request->getPost("ip");
-        $validator = new \Hab\Model\ValidateIP($ip);
+        $validator = new \Hab\MeModule\ValidateIP($ip);
         $data = $validator->sendRes();
         if ($data["isValid"]) {
             $api = require(ANAX_INSTALL_PATH . "/config.php");
             $key = $api["key"];
-            $fetch = new \Hab\Model\Fetch("GET", "http://api.ipstack.com/$ip?access_key=$key");
+            $fetch = new \Hab\MeModule\Fetch("GET", "http://api.ipstack.com/$ip?access_key=$key");
             $this->res["fetch"] = json_decode($fetch->fetch());
         }
         $this->res["data"] = $data;
