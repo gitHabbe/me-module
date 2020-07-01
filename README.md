@@ -24,6 +24,11 @@ return [
 composer require githabbe/me-module
 ```
 
+# Use the bash-file to skip 'rsync' commands below
+```bash
+bash vendor/githabbe/me-module/.hab/scaffold/postprocess.d/1200_geo.bash
+```
+
 # Copy the configuration files
 ```bash
 rsync -av vendor/githabbe/me-module/config ./
