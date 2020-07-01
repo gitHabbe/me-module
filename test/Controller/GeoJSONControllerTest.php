@@ -4,6 +4,7 @@ namespace Anax\Controller;
 
 use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
+use Hab\MeModule;
 
 /**
  * Test the SampleJsonController.
@@ -35,7 +36,7 @@ class GeoJSONControllerTest extends TestCase
         $di = $this->di;
 
         // Setup the controller
-        $this->controller = new GeoJSONController();
+        $this->controller = new \Hab\MeModule\GeoJSONController();
         $this->controller->setDI($this->di);
         $this->controller->initialize();
     }
@@ -60,7 +61,7 @@ class GeoJSONControllerTest extends TestCase
         // $di = $this->di;
 
         // Setup the controller
-        $controller = new GeoJSONController();
+        $controller = new \Hab\MeModule\GeoJSONController();
         $controller->setDI($this->di);
         $controller->initialize();
 
@@ -95,7 +96,7 @@ class GeoJSONControllerTest extends TestCase
         // $di = $this->di;
 
         // Setup the controller
-        $controller = new GeoJSONController();
+        $controller = new \Hab\MeModule\GeoJSONController();
         $controller->setDI($this->di);
         $controller->initialize();
 
