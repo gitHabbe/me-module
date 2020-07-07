@@ -26,6 +26,7 @@ jobs:
 
             #- run: composer install -n --prefer-dist
             - run: make install
+            - run: mkdir -p cache/anax
 
             - save_cache:
                   paths:
