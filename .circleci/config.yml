@@ -8,10 +8,9 @@ test:
         - make check
     override:
         - make test
-
-notify:
-    webhooks:
-        # just testing
-        - url: blabla
-        # nvm this
-        - url: blabla
+# notify:
+#     webhooks:
+#         # just testing
+#         - url: blabla
+#         # nvm this
+#         - url: blabla
