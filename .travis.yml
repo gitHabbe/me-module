@@ -23,6 +23,7 @@ matrix:
 
 before_script:
     - make install
+    - chmod 777 cache
 
 script:
     - make check
