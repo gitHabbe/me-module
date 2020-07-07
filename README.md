@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/gitHabbe/me-module.svg?branch=master)](https://travis-ci.org/gitHabbe/me-module)
 [![CircleCI](https://circleci.com/gh/gitHabbe/me-module.svg?style=shield)](https://circleci.com/gh/gitHabbe/me-module)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gitHabbe/me-module/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gitHabbe/me-module/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/gitHabbe/me-module/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/gitHabbe/me-module/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/gitHabbe/me-module/badges/build.png?b=master)](https://scrutinizer-ci.com/g/gitHabbe/me-module/build-status/master)
 
 MeModule for Anax projects
 ==================================
