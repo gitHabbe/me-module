@@ -42,7 +42,7 @@ class Fetch2 implements ContainerInjectableInterface
         return $this->method;
     }
 
-    public function fetch(String $method, String $url, Array $params = [])
+    public function fetch(String $method, String $url, Array $params = [], Array $data = [])
     {
         $curl = curl_init();
         $url = str_replace(array_keys($this->sweChars), $this->sweChars, $url);;
@@ -62,63 +62,16 @@ class Fetch2 implements ContainerInjectableInterface
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
                 break;    
             default:
-                break;
-        }
+                curl_close($curl);
+                return false;
+                // break;
+            }
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $res = curl_exec($curl);
         curl_close($curl);
 
         return $res;
-    }
-
-    public function prep(String $method, String $url, Array $params = [])
-    {
-        $curl = curl_init();
-        $url = str_replace(array_keys($this->sweChars), $this->sweChars, $url);;
-        switch ($method) {
-            case "GET":
-                break;
-            case "POST":
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-                curl_setopt($curl, CURLOPT_POST, true);
-                break;    
-            case "PUT":
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-                break;    
-            case "DELETE":
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
-                break;    
-            default:
-                break;
-        }
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-        return $curl;
-    }
-
-    public function exec($curl)
-    {
-        $res = curl_exec($curl);
-        curl_close($curl);
-
-        return $res;
-    }
-
-    public function multiFetch(Array $urls = [])
-    {
-        $temp = [];
-        foreach ($urls as $url) {
-            var_dump($url);
-            $asdf = $this->fetch("GET", $url);
-            var_dump($asdf);
-            die();
-            // array_push($temp, $this->fetch("GET", $url));
-        }
-        return $temp;
     }
 
     // public function multiFetch($urls = [])
