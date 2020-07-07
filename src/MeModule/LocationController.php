@@ -44,7 +44,6 @@ class LocationController implements ContainerInjectableInterface
         $session    = $this->di->get("session");
         $request    = $this->di->get("request");
         $response   = $this->di->get("response");
-        $location   = $this->di->get("location");
         $validator  = $this->di->get("ip");
         $fetch      = $this->di->get("fetch");
 
@@ -90,7 +89,7 @@ class LocationController implements ContainerInjectableInterface
                 $res = json_decode($fetch->fetch("GET", "https://api.darksky.net/forecast/$darkKey/$lat,$lng"));
                 array_push($data, [$res, $locc]);
             } else {
-                var_dump($locc);
+                // var_dump($locc);
                 array_push($data, [null, $locc]);
             }
         }
