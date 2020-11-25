@@ -4,4 +4,4 @@
 /build
 composer.lock
 .bin
-config.php
+./config.php
