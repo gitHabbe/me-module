@@ -101,6 +101,7 @@ class LocationJsonController implements ContainerInjectableInterface
                 $lat = $locc[0][0];
                 $lng = $locc[0][1];
                 $res = json_decode($fetch->fetch("GET", "https://api.darksky.net/forecast/$darkKey/$lat,$lng"));
+                // $res = json_decode($fetch->fetch("GET", "https://api.darksky.net/forecast/$darkKey/$lat,$lng"));
                 array_push($data, [$res, $locc]);
             } else {
                 // var_dump($locc);

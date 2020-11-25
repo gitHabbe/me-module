@@ -23,7 +23,7 @@ return [
         [
             "info" => "Just say hi with a string.",
             "mount" => "location",
-            "handler" => "\Hab\MeModule\LocationJSONController"
+            "handler" => "\Hab\MeModule\LocationJsonController"
         ],
     ]
 ];
